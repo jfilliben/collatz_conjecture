@@ -1,11 +1,10 @@
-#collatz.py
+# collatz.py
 
 # n even: replace with n/2
 # n odd:  replace with 3n+1
 
 import random
 import sys
-import time
 
 random.seed()
 
@@ -27,9 +26,9 @@ if user_input.isdigit():
 else:
     num_repetitions = 1000
 
-highest = (1,1,1)
+highest = [1, 1, 1]
 print "Original_N     Max_N               Num_Steps"
-for x in range(1,num_repetitions):
+for x in range(1, num_repetitions):
     original_n = random.randint(rand_min, rand_max)
     n = original_n
     max = n
@@ -37,7 +36,7 @@ for x in range(1,num_repetitions):
     while n != 1:
         step_count += 1
         if n % 2 == 0:
-            n /=  2
+            n /= 2
         else:
             n = 3 * n + 1
         if n > max:
@@ -50,4 +49,3 @@ print "Most Steps = {}".format(highest[2])
 print "N = {}".format(highest[0])
 print "Highest intermediate value for N = {} was {}".format(highest[0],
                                                             highest[1])
-
